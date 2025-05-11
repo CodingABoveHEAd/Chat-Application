@@ -42,6 +42,10 @@ const connectMongo = async () => {
 };
 connectMongo();
 
+app.get("/", (req, res) => {
+  res.redirect("/login");
+});
+
 app.use("/login", loginRouter);
 app.use("/users", usersRouter);
 app.use("/inbox", inboxRouter);
