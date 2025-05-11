@@ -71,11 +71,11 @@ socket.on("one_message", async ({ msg, selectedReceiver }) => {
 
   const recId = users[receiverMobile];
   if (recId) {
-    // ✅ Send only to receiver
+
     io.to(recId).emit("other_message", payload);
   }
 
-  // ✅ Send only to sender (your own socket)
+  
   socket.emit("own_message", payload);
 
   // Save to DB
